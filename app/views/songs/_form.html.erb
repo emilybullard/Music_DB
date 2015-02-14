@@ -17,15 +17,15 @@
   </div>
   <div class="field">
     <%= f.label :genre_id %><br>
-    <%= f.number_field :genre_id %>
+    <%= f.collection_select :genre_id, @genres, :id, :name %>
   </div>
   <div class="field">
     <%= f.label :artist_id %><br>
-    <%= f.number_field :artist_id %>
+    <%= f.collection_select :artist_id, @artists, :id, :name %>
   </div>
   <div class="field">
     <%= f.label :album_id %><br>
-    <%= f.number_field :album_id %>
+    <%= f.collection_select :album_id, @albums, :id, :title %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -15,10 +15,16 @@ class SongsController < ApplicationController
   # GET /songs/new
   def new
     @song = Song.new
+    @genres = Genre.all
+    @artists = Artist.all 
+    @albums = Album.all
   end
 
   # GET /songs/1/edit
   def edit
+    @genres = Genre.all
+    @artists = Artist.all 
+    @albums = Album.all
   end
 
   # POST /songs

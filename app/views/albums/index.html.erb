@@ -16,8 +16,8 @@
     <% @albums.each do |album| %>
       <tr>
         <td><%= album.title %></td>
-        <td><%= album.genre_id %></td>
-        <td><%= album.artist_id %></td>
+        <td><%= album.genre.name %></td>
+        <td><%= album.artist.name %></td>
         <td><%= link_to 'Show', album %></td>
         <td><%= link_to 'Edit', edit_album_path(album) %></td>
         <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></td>

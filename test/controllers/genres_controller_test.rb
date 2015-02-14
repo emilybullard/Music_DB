@@ -18,7 +18,7 @@ class GenresControllerTest < ActionController::TestCase
 
   test "should create genre" do
     assert_difference('Genre.count') do
-      post :create, genre: { type: @genre.type }
+      post :create, genre: { name: @genre.name }
     end
 
     assert_redirected_to genre_path(assigns(:genre))
@@ -35,7 +35,7 @@ class GenresControllerTest < ActionController::TestCase
   end
 
   test "should update genre" do
-    patch :update, id: @genre, genre: { type: @genre.type }
+    patch :update, id: @genre, genre: { name: @genre.name }
     assert_redirected_to genre_path(assigns(:genre))
   end
 
