@@ -39,7 +39,7 @@ class ArtistsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /artists/1
+  # PATCH/PUT /artists/1  
   # PATCH/PUT /artists/1.json
   def update
     respond_to do |format|
