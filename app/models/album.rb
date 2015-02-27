@@ -5,4 +5,6 @@ class Album < ActiveRecord::Base
 	has_many :songs
 	
 	validates :title, presence: true  
+
+	mount_uploader :cover, CoverUploader
 end
