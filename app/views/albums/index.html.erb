@@ -33,3 +33,5 @@
 
 
 <%= link_to 'New Album', new_album_path %>
+
+<%= will_paginate @albums, renderer: BootstrapPagination::Rails %>

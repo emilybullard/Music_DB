@@ -7,4 +7,7 @@ class Album < ActiveRecord::Base
 	validates :title, presence: true  
 
 	mount_uploader :cover, CoverUploader
+
+	extend FriendlyId
+  	friendly_id :title, use: :slugged
 end

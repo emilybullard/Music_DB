@@ -25,3 +25,5 @@
 <br>
 
 <%= link_to 'New Genre', new_genre_path %>
+
+<%= will_paginate @genres, renderer:BootstrapPagination::Rails %>

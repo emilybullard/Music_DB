@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'static_pages/home'
+
+  get 'static_pages/about'
+
+  root to: 'static_pages#home' #controller#action
+
+  get '/static_pages' => 'static_pages#home' , as: 'static_pages'
+  
   resources :genres
 
   resources :songs

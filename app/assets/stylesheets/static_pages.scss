@@ -1,0 +1,90 @@
+.jumbotron {
+	background-image: url("http://pressplayok.com/wp-content/uploads/2014/12/albums13.jpg");
+	padding: 20%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	margin-top: -40px;
+	background-attachment: fixed;
+	padding-bottom: 200px;
+}
+
+.navbar.transparent.navbar-inverse {
+   background: rgba(0,0,0,0.4);
+   font-family: 'Roboto' sans-serif;
+   font-weight: 400;			
+}
+
+.mission {
+	background-color: #fff;
+	padding-top: 75px;
+	padding-bottom: 175px;
+}
+
+.mission h3 {
+	color: #000;
+	font-family: 'Roboto' sans-serif;
+	font-size: 2.8em;
+	font-weight: 100;
+	display: block;
+	text-align: center;
+}
+
+.mission h4 {
+	color: #000;
+	font-family: 'Montserrat' sans-serif;
+	font-size: 0.9em;
+	display: block;
+	text-align: center;
+}
+
+#gallery {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#gallery li {
+  float: left;
+  width: 45%;
+  margin: 2.5%;
+  background-color: #f5f5f5;
+  color: #000;
+}
+
+#gallery li p {	
+  margin: 0;
+  padding: 5%;
+  font-size: 0.75em;
+  color: #000;
+  text-align: center;
+}
+
+.about {
+	background-color: #fff;
+	padding-top: 75px;
+	padding-bottom: 175px;
+}
+
+.about h3 {
+	color: #000;
+	font-family: 'Roboto' sans-serif;
+	font-size: 2.8em;
+	font-weight: 100;
+	display: block;
+	text-align: center;
+}
+
+.about h4 {
+	color: #000;
+	font-family: 'Montserrat' sans-serif;
+	font-size: 0.9em;
+	display: block;
+	text-align: center;
+	padding-left: 15%;
+	padding-right: 15%;
+}
+
+// Place all the styles related to the static_pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/

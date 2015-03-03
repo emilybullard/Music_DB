@@ -31,3 +31,5 @@
 <br>
 
 <%= link_to 'New Song', new_song_path %>
+
+<%= will_paginate @songs, renderer:BootstrapPagination::Rails %>

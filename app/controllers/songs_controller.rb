@@ -4,7 +4,7 @@ class SongsController < ApplicationController
   # GET /songs
   # GET /songs.json
   def index
-    @songs = Song.all
+    @songs = Song.paginate(page: params[:page], per_page: 10)
   end
 
   # GET /songs/1
@@ -70,7 +70,7 @@ class SongsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_song
-      @song = Song.find(params[:id])
+      @song = Song.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

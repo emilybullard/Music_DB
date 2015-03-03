@@ -1,5 +1,31 @@
+<nav class="navbar transparent navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="http://localhost:3000/">H O M E<span class="sr-only">(current)</span></a></li>
+        <li><a href="http://localhost:3000/static_pages/about">A B O U T</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">B R O W S E<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="http://localhost:3000/artists">A R T I S T S</a></li>
+            <li class="divider"></li>
+            <li><a href="http://localhost:3000/albums">A L B U M S</a></li>
+            <li class="divider"></li>
+            <li><a href="http://localhost:3000/songs">S O N G S</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
 <p id="notice"><%= notice %></p>
 
+<br>
+<br>
 <h1>Listing Artists</h1>
 
 <table>
@@ -29,3 +55,5 @@
 <br>
 
 <%= link_to 'New Artist', new_artist_path %>
+
+<%= will_paginate @artists, renderer:BootstrapPagination::Rails %>
