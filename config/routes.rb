@@ -6,10 +6,14 @@ Rails.application.routes.draw do
 
   root to: 'static_pages#home' #controller#action
 
-  get '/static_pages' => 'static_pages#home' , as: 'static_pages'
+  get '/static_pages' => 'static_pages#home' , as: 'home'
   
-  devise_for :users
-  
+  get '/welcome' => 'static_pages#welcome', as: 'welcome'
+
+  devise_for :users, controllers: {
+        registrations: 'user/registrations'
+      }
+
   resources :genres
 
   resources :songs
