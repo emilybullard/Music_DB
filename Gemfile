@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'devise'
 gem 'friendly_id', '~> 5.1.0'
 gem 'will_paginate-bootstrap'
 gem 'will_paginate', '~> 3.0.6'
