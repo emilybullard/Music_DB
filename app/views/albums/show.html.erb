@@ -1,22 +1,16 @@
-<p>
-
- <b>Songs in this Album:</b>
-
- <% @album.songs.each do |song| %>
-
- <ul>
-
-   <li><%= song.name %></li>
-
- </ul>
-
- <% end %>
-
-</p>
-
-<p>
-	<strong>Album Cover:</strong>
-	<br>
-	<%= image_tag(@album.cover_url, width: 200) if @album.cover.present? %>
-
-</p>
+<div class="container">
+	<div class="row">
+	  <div class="col-md-8">
+	  	<strong>A L B U M:</strong> <br>
+		<%= image_tag(@album.cover_url, width: 300) if @album.cover.present? %>
+	  </div>
+	  <div class="col-md-4">
+	  	<strong>S O N G S:</strong> <br>
+	  	<% @album.songs.each do |song| %>
+	  	<ul>
+	  		<li><%= song.name %></li>
+	  	</ul>	
+	  	 <% end %>
+	  </div>
+	</div>
+</div>

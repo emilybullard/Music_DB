@@ -1,59 +1,72 @@
-<nav class="navbar transparent navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="http://localhost:3000/">H O M E<span class="sr-only">(current)</span></a></li>
-        <li><a href="http://localhost:3000/static_pages/about">A B O U T</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">B R O W S E<span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="http://localhost:3000/artists">A R T I S T S</a></li>
-            <li class="divider"></li>
-            <li><a href="http://localhost:3000/albums">A L B U M S</a></li>
-            <li class="divider"></li>
-            <li><a href="http://localhost:3000/songs">S O N G S</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
 <p id="notice"><%= notice %></p>
 
 <br>
 <br>
-<h1>Listing Artists</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Bio</th>
-      <th>Genre</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">A R T I S T S</div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>N A M E</th>
+            <th>B I O</th>
+            <th>G E N R E</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
 
-  <tbody>
-    <% @artists.each do |artist| %>
-      <tr>
-        <td><%= artist.name %></td>
-        <td><%= artist.bio %></td>
-        <td><%= artist.genre.name %></td>
-        <td><%= link_to 'Show', artist %></td>
-        <td><%= link_to 'Edit', edit_artist_path(artist) %></td>
-        <td><%= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <tbody>
+          <% @artists.each do |artist| %>
+            <tr>
+              <td><%= artist.name %></td>
+              <td><%= artist.bio %></td>
+              <td><%= artist.genre.name %></td>
+              <td><%= link_to 'Show', artist %></td>
+              <td><%= link_to 'Edit', edit_artist_path(artist) %></td>
+              <td><%= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 
 <br>
 
 <%= link_to 'New Artist', new_artist_path %>
 
 <%= will_paginate @artists, renderer:BootstrapPagination::Rails %>
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<div id="wrapper">
+        <ul id="gallery">
+            <li>
+              <a href="http://localhost:3000/artists">
+                <p>A R T I S T S</p>
+              </a>
+            </li>
+            <li>
+              <a href="http://localhost:3000/albums">
+                <p>A L B U M S</p>
+              </a>
+            </li>
+            <li>
+              <a href="http://localhost:3000/songs">
+                <p>S O N G S</p>
+              </a>
+            </li>
+            <li>
+              <a href="http://localhost:3000/genres">
+                <p>G E N R E S</p>
+              </a>
+            </li>
+        </ul>
+  </div>

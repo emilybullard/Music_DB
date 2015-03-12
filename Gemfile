@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem "grooveshark"
+gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
 gem 'friendly_id', '~> 5.1.0'
 gem 'will_paginate-bootstrap'

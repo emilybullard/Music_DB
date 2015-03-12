@@ -1,15 +1,26 @@
 class SongsController < ApplicationController
   before_action :set_song, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
+  
   # GET /songs
   # GET /songs.json
   def index
-    @songs = Song.paginate(page: params[:page], per_page: 10)
+    if params[:query] 
+      @songs = Song.where(name: params[:query].titleize)
+    else
+      @songs = Song.paginate(page: params[:page], per_page: 10)
+    end
   end
 
   # GET /songs/1
   # GET /songs/1.json
   def show
+    require 'grooveshark'
+    client = Grooveshark::Client.new
+
+    songs = client.search_songs('Nirvana')
+    @track = songs.first
+    
   end
 
   # GET /songs/new

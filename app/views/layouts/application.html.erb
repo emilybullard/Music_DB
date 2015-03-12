@@ -2,7 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>MusicDB</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Music Database</title>
+
+  <link href='http://fonts.googleapis.com/css?family=Roboto:100,400|Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <!-- Bootstrap -->
+   <link href="css/bootstrap.min.css" rel="stylesheet">
 
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
@@ -12,21 +18,46 @@
 </head>
 <body>
 
+	<nav class="navbar transparent navbar-inverse navbar-fixed-top">
+	  <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+	        <li><a href="http://localhost:3000/">H O M E<span class="sr-only">(current)</span></a></li>
+	        <li><a href="http://localhost:3000/static_pages/about">A B O U T</a></li>
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">B R O W S E<span class="caret"></span></a>
+	          <ul class="dropdown-menu" role="menu">
+	            <li><a href="http://localhost:3000/artists">A R T I S T S</a></li>
+	            <li class="divider"></li>
+	            <li><a href="http://localhost:3000/albums">A L B U M S</a></li>
+	            <li class="divider"></li>
+	            <li><a href="http://localhost:3000/songs">S O N G S</a></li>
+	            <li class="divider"></li>
+	            <li><a href="http://localhost:3000/genres">G E N R E S</a></li>
+	          </ul>
+	        </li>
+	      </ul>
+	      <div class="sign_up">
+	      	<strong><p class="sign_up">
+				<% if user_signed_in? %>
+					Logged in as <strong><%=current_user.email %></strong>
+					<%= link_to 'Edit Profile', edit_user_registration_path, class: 'navbar-link' %>
+					<%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'navbar-link' %>
+				<% else %>
+					<%= link_to "Sign Up", new_user_registration_path, class: 'navbar-link' %>
+					<%= link_to "Login", new_user_session_path, class: 'navbar-link' %>
+				<% end %>
+	      </div>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+
 	<p class="notice"><%= notice %></p>
 	<p class="alert"><%= alert %></p>  
-
-	<strong><p class="sign_up">
-		<% if user_signed_in? %>
-		Logged in as <strong><%=current_user.email %></strong>
-		<%= link_to 'Edit Profile', edit_user_registration_path, class: 'navbar-link' %>
-		<%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'navbar-link' %>
-		<% else %>
-			<%= link_to "Sign Up", new_user_registration_path, class: 'navbar-link' %>
-			<%= link_to "Login", new_user_session_path, class: 'navbar-link' %>
-			<% end %>
-	</p></strong>
-
     <%= yield %>
-  
+
 </body>
 </html>
