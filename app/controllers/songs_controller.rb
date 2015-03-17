@@ -2,6 +2,7 @@ class SongsController < ApplicationController
   before_action :set_song, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
   
+  include SongsHelper
   # GET /songs
   # GET /songs.json
   def index
@@ -15,12 +16,7 @@ class SongsController < ApplicationController
   # GET /songs/1
   # GET /songs/1.json
   def show
-    require 'grooveshark'
-    client = Grooveshark::Client.new
-
-    songs = client.search_songs('Nirvana')
-    @track = songs.first
-    
+    songs_and_tracks
   end
 
   # GET /songs/new

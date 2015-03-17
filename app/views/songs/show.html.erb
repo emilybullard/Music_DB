@@ -24,4 +24,15 @@
 <%= link_to 'Back', songs_path %>
 
 
-<%= @track.name %>
+<% if @track != nil %>
+	<%= @track.name %>
+	<object width="250" height="40" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" id="gsSong<%= @track.id %>" name="gsSong<%= @track.id %>"><param name="movie" value="http://grooveshark.com/songWidget.swf" /><param name="wmode" value="window" /><param name="allowScriptAccess" value="always" /><param name="flashvars" value="hostname=grooveshark.com&songID=<%= @track.id %>&style=metal&p=0" /><object type="application/x-shockwave-flash" data="http://grooveshark.com/songWidget.swf" width="250" height="40"><param name="wmode" value="window" /><param name="allowScriptAccess" value="always" /><param name="flashvars" value="hostname=grooveshark.com&songID=<%= @track.id %>&style=metal&p=0" /><span></span></object></object>
+<% else %>
+	<p>This Track does not exist.</p>
+<% end %>
+
+
+
+
+
+<%= @lyrics %> 
